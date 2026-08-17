@@ -31,4 +31,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   aimDetectionRadius: 0.15
+  magnetRadius: 0.6
   refireBehaviour: 0
