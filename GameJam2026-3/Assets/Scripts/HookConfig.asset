@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa10f1ff8792f34ab7ae1e89251f326, type: 3}
+  m_Name: HookConfig
+  m_EditorClassIdentifier: Assembly-CSharp::HookConfig
+  maxDistance: 60.52
+  launchSpeed: 200
+  retractSpeed: 200
+  pullForce: 30
+  pullMinDistance: 0.3
+  grudarEffectorForce: -70
+  grudarEffectorForceVariation: 1
+  grudarEffectorZoneRadiusMultiplier: 1.75
+  grudarEffectorDrag: 0
+  grudarSurfaceOffset: 0.3
+  grudarMaxDistanceMultiplier: 1
+  grudarMaxSpeed: 100
+  grabbableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  pullableLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  aimDetectionRadius: 0.15
+  refireBehaviour: 0
