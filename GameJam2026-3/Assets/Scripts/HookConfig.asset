@@ -26,10 +26,10 @@ MonoBehaviour:
   grudarMaxSpeed: 100
   grabbableLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   pullableLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   aimDetectionRadius: 0.15
   magnetRadius: 0.6
   refireBehaviour: 0
