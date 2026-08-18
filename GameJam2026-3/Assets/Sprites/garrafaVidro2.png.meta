@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bf401ecaf068c594390b86b87e13aa3a
+guid: 44568974e4db1754ab41d19d3f3672db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 785403083918131155
-    second: garrafaVidro_0
+      213: 5980638791811311542
+    second: garrafaVidro2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: garrafaVidro_0
+      name: garrafaVidro2_0
       rect:
         serializedVersion: 2
-        x: 374
-        y: 0
-        width: 527
-        height: 1051
+        x: 930
+        y: 587
+        width: 590
+        height: 1325
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3dfbf6e81ff46ea00800000000000000
-      internalID: 785403083918131155
+      spriteID: 6b7a5db5b4f7ff250800000000000000
+      internalID: 5980638791811311542
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      garrafaVidro_0: 785403083918131155
+      garrafaVidro2_0: 5980638791811311542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
