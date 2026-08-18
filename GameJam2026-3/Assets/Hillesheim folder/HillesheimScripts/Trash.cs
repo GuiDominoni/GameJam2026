@@ -10,6 +10,7 @@ public enum TrashType
 public class Trash : MonoBehaviour
 {
     [SerializeField] private TrashType _trash;
+    private Animator _garbageAnimator;
     private AudioSource _trashDescarted;
     private void OnTriggerEnter2D(Collider2D collision)
     {
