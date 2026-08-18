@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameController : MonoBehaviour
+public class TrashGameController : MonoBehaviour
 {
     [Header("GamecontrollerInstace")]
-    public static GameController Instance { get; private set; }
+    public static TrashGameController Instance { get; private set; }
     public GameObject[] GarbageGameObjects { get => _garbageGameObjects;}
     public UnityEvent Win { get => _win;}
     public int TrashTrowedOutValue { get; private set; }
