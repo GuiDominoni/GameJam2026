@@ -9,15 +9,15 @@ public class TrashGameController : MonoBehaviour
 
     public GameObject[] GarbageGameObjects { get => _garbageGameObjects;}
     public UnityEvent Win { get => _win;}
-    public AudioSource TrashDescarted { get => _trashDescarted;}
-    public Animator GarbageAnimator { get => _garbageAnimator;}
+    //public AudioSource TrashDescartedSound { get => _trashDescartedSound;}
+    //public Animator GarbageAnimator { get => _garbageAnimator;}
 
     [Space(50)]
     [Header("SerializeFields")]
     [SerializeField] private GameObject[] _garbageGameObjects;
     [SerializeField] private UnityEvent _win;
-    [SerializeField] private AudioSource _trashDescarted;
-    [SerializeField] private Animator _garbageAnimator;
+    //[SerializeField] private AudioSource _trashDescartedSound;
+    //[SerializeField] private Animator _garbageAnimator;
 
     public void AddTrash()
     {
