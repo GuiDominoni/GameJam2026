@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d86fc3d5e4393a4f8ee7ffebf33f670
+guid: 134b19860dfc72f46adf88e61eca40b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2106929500454161395
-    second: PapelHigienico_0
+      213: 1947083598400116643
+    second: BolaPapel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PapelHigienico_0
+      name: BolaPapel_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 8
+        x: 11
+        y: 11
         width: 31
-        height: 36
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0473a648cea2c2e0800000000000000
-      internalID: -2106929500454161395
+      spriteID: 3a7d0a6773e650b10800000000000000
+      internalID: 1947083598400116643
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PapelHigienico_0: -2106929500454161395
+      BolaPapel_0: 1947083598400116643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
