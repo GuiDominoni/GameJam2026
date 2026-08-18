@@ -2208,7 +2208,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d6e3f3a7a4fb342874f6f40c71a7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashGameController
-  _trashGameObjects: []
+  plasticGarbage: {fileID: 0}
+  paperGarbage: {fileID: 0}
+  metalGarbage: {fileID: 0}
+  glassGarbage: {fileID: 0}
+  balao: {fileID: 0}
+  _trashGameObjects:
+  - {fileID: 1187918398}
+  - {fileID: 1187918398}
   _win:
     m_PersistentCalls:
       m_Calls:
@@ -10570,7 +10577,6 @@ Transform:
   m_Children:
   - {fileID: 1046281869}
   - {fileID: 1743236623}
-  - {fileID: 1187918402}
   - {fileID: 923886815}
   - {fileID: 889478946}
   - {fileID: 551262344}
@@ -11024,11 +11030,11 @@ Transform:
   m_GameObject: {fileID: 1187918398}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.3, y: 17.8, z: 0}
+  m_LocalPosition: {x: 53.29396, y: 5.0753994, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1008596300}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1187918403
 Rigidbody2D:
@@ -50717,6 +50723,7 @@ SceneRoots:
   - {fileID: 970108158}
   - {fileID: 108148577}
   - {fileID: 176910343}
+  - {fileID: 1187918402}
   - {fileID: 103516955}
   - {fileID: 2094563254}
   - {fileID: 1239775351}

@@ -12,6 +12,7 @@ public class Trash : MonoBehaviour
     [SerializeField] private TrashType _trash;
     //private Animator _garbageAnimator;
     private AudioSource _trashDescartedSound;
+    private bool _pulled = false;
     private void Awake()
     {
         //_garbageAnimator = TrashGameController.Instance.GarbageAnimator;
