@@ -6,13 +6,13 @@ public class TrashGameController : MonoBehaviour
     [Header("GamecontrollerInstace")]
     public static TrashGameController Instance { get; private set; }
     public int TrashTrowedOutValue { get; private set; }
-    public GameObject[] GarbageGameObjects { get => _garbageGameObjects;}
+    public GameObject[] TrashGameObjects { get => _trashGameObjects;}
     public UnityEvent Win { get => _win;}
     //public AudioSource TrashDescartedSound { get => _trashDescartedSound;}
     //public Animator GarbageAnimator { get => _garbageAnimator;}
     [Space(50)]
     [Header("SerializeFields")]
-    [SerializeField] private GameObject[] _garbageGameObjects;
+    [SerializeField] private GameObject[] _trashGameObjects;
     [SerializeField] private UnityEvent _win;
     //[SerializeField] private AudioSource _trashDescartedSound;
     //[SerializeField] private Animator _garbageAnimator;
@@ -26,7 +26,7 @@ public class TrashGameController : MonoBehaviour
     }
     private void Update()
     {
-        if (TrashTrowedOutValue >= _garbageGameObjects.Length)
+        if (TrashTrowedOutValue >= _trashGameObjects.Length)
         {
             _win.Invoke();
         }
