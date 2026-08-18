@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4793511547349544635
+--- !u!114 &-1176809139457684655
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,25 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
-  m_Name: ColorAdjustments
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ColorAdjustments
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ShadowsMidtonesHighlights
   active: 1
-  postExposure:
+  shadows:
     m_OverrideState: 1
-    m_Value: 0
-  contrast:
+    m_Value: {x: 0.6953757, y: 0.81544477, z: 1, w: 0.09708744}
+  midtones:
     m_OverrideState: 1
-    m_Value: -4
-  colorFilter:
+    m_Value: {x: 0, y: 1, z: 0.86867714, w: 0.32749522}
+  highlights:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
-  hueShift:
-    m_OverrideState: 0
-    m_Value: 0
-  saturation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_Value: {x: 1, y: 0.9194743, z: 0.43298185, w: -0.6443072}
+  shadowsStart:
+    m_OverrideState: 1
+    m_Value: 0.15
+  shadowsEnd:
+    m_OverrideState: 1
+    m_Value: 1.6
+  highlightsStart:
+    m_OverrideState: 1
+    m_Value: 1.08
+  highlightsEnd:
+    m_OverrideState: 1
+    m_Value: 3.92
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,9 +47,9 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.VolumeProfile
   components:
-  - {fileID: 6371504695262429245}
-  - {fileID: -4793511547349544635}
---- !u!114 &6371504695262429245
+  - {fileID: -1176809139457684655}
+  - {fileID: 8123794497045064562}
+--- !u!114 &8123794497045064562
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,48 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb4b772797da9440885e8bd939e9560, type: 3}
   m_Name: ColorCurves
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ColorCurves
-  active: 1
+  active: 0
   master:
-    m_OverrideState: 1
-    m_Value:
-      <length>k__BackingField: 3
-      m_Loop: 0
-      m_ZeroValue: 0
-      m_Range: 1
-      m_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.86618006
-          value: 0.37948716
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-  red:
     m_OverrideState: 0
     m_Value:
       <length>k__BackingField: 2
@@ -127,6 +93,46 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+  red:
+    m_OverrideState: 0
+    m_Value:
+      <length>k__BackingField: 3
+      m_Loop: 0
+      m_ZeroValue: 0
+      m_Range: 1
+      m_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.6532663
+          value: 0.61375666
+          inSlope: 1.4245243
+          outSlope: 1.4245243
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0.7724868
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
   green:
     m_OverrideState: 1
     m_Value:
@@ -147,10 +153,10 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.5985401
-          value: 0.5794872
-          inSlope: 3.37231
-          outSlope: 3.37231
+          time: 0.5552764
+          value: 0.61904764
+          inSlope: 0.4785957
+          outSlope: 0.4785957
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -168,7 +174,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   blue:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value:
       <length>k__BackingField: 3
       m_Loop: 0
@@ -187,19 +193,19 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.67396593
-          value: 0.5128205
-          inSlope: 0.9918553
-          outSlope: 0.9918553
+          time: 0.4522613
+          value: 0.48677248
+          inSlope: 2.2562368
+          outSlope: 2.2562368
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 1
+          time: 0.98241204
+          value: 0.8518518
+          inSlope: 0.8512888
+          outSlope: 0.8512888
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -210,44 +216,26 @@ MonoBehaviour:
   hueVsHue:
     m_OverrideState: 0
     m_Value:
-      <length>k__BackingField: 1
+      <length>k__BackingField: 0
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0.04622871
-          value: 0.46153843
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
   hueVsSat:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value:
-      <length>k__BackingField: 1
+      <length>k__BackingField: 0
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0.729927
-          value: 0.4102564
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -265,15 +253,24 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   lumVsSat:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 1
       m_Loop: 0
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.59045225
+          value: 0.8306878
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
