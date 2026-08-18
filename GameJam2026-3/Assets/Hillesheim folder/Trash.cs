@@ -11,6 +11,7 @@ public enum TrashType
 public class Trash : MonoBehaviour
 {
     [SerializeField] private TrashType _trash;
+    private AudioSource _trashDescarted;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Garbage>() != null)
