@@ -160,6 +160,7 @@ public class TrashGameController : MonoBehaviour
             finalZoom,
             1f - Mathf.Exp(-speed * Time.unscaledDeltaTime)
         );
+        Time.timeScale = 0f;
     }
 
     public void ShowGarbage(TrashType type)
@@ -237,6 +238,7 @@ public class TrashGameController : MonoBehaviour
 
     private IEnumerator FadeAndScene(string scene)
     {
+        Time.timeScale = 1f;
         float fadeTime = 0f;
         Color _color = fadeImage.color;
 
