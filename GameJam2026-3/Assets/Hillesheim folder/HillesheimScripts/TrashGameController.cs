@@ -18,6 +18,8 @@ public class TrashGameController : MonoBehaviour
     {
         get => _win;
     }
+    public Sprite GreenCheck { get => _greenCheck;}
+    public TrashUi TrashUi { get => _trashUi;}
 
     [Header("Garbage Bins")]
     public Transform plasticGarbage;
@@ -33,11 +35,13 @@ public class TrashGameController : MonoBehaviour
     [Space(50)]
     [Header("Serialize Fields")]
     [SerializeField] private GameObject[] _trashGameObjects;
+    [SerializeField] private TrashUi _trashUi;
+    [SerializeField] private Sprite _greenCheck;
     [SerializeField] private UnityEvent _win;
 
     private Transform currentDestination;
     private bool showingArrow;
-    private bool gameWon;
+    private bool gameWon = false;
 
     public void AddTrash()
     {

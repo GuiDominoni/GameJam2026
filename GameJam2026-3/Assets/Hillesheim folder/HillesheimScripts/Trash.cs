@@ -11,6 +11,7 @@ public enum TrashType
 public class Trash : MonoBehaviour
 {
     [SerializeField] private TrashType _trash;
+    [SerializeField] private TrashUi _trashUi;
     public TrashType Type => _trash;
 
     //private Animator _garbageAnimator;
@@ -24,6 +25,7 @@ public class Trash : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("passou");
         if (collision.GetComponent<Garbage>() != null)
         {
             _trashDescartedSound =
@@ -35,30 +37,34 @@ public class Trash : MonoBehaviour
             if (garbage.garbageType.Equals(GarbageType.plastic) &&
                 _trash.Equals(TrashType.plastic))
             {
+                _trashUi.TrashUIUpdate(TrashType.plastic);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             else if (garbage.garbageType.Equals(GarbageType.paper) &&
                      _trash.Equals(TrashType.paper))
             {
+                _trashUi.TrashUIUpdate(TrashType.paper);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             else if (garbage.garbageType.Equals(GarbageType.glass) &&
                      _trash.Equals(TrashType.glass))
             {
+                _trashUi.TrashUIUpdate(TrashType.glass);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             else if (garbage.garbageType.Equals(GarbageType.metal) &&
                      _trash.Equals(TrashType.metal))
             {
+                _trashUi.TrashUIUpdate(TrashType.metal);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             TrashGameController.Instance.HideArrow();
         }
