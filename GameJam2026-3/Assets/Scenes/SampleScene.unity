@@ -10544,7 +10544,7 @@ MonoBehaviour:
   buttonDuration: 1
   buttonProgress: 0
   timerText: {fileID: 966365417}
-  startTime: 2
+  startTime: 200
   fadeImage: {fileID: 2077107501}
   fadeDuration: 1
   mainCamera: {fileID: 1428890264}
@@ -50691,6 +50691,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
+    - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
       propertyPath: _trashUi
       value: 
       objectReference: {fileID: 260857551}
@@ -50746,6 +50750,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Size.x
+      value: 21.47213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Size.y
+      value: 10.509027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.1278076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.02227068
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50763,6 +50783,14 @@ PrefabInstance:
       propertyPath: trashGameController
       value: 
       objectReference: {fileID: 604926701}
+    - target: {fileID: 7778060118217740928, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+      propertyPath: m_Radius
+      value: 1.0481386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778060118217740928, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.0055313
+      objectReference: {fileID: 0}
     - target: {fileID: 8124910015478913048, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.5
@@ -50860,6 +50888,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
     - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
       propertyPath: _trashUi
       value: 
@@ -51004,6 +51036,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
+    - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
       propertyPath: _trashUi
       value: 
       objectReference: {fileID: 260857551}
@@ -51112,6 +51148,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
     - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
       propertyPath: _trashUi
       value: 

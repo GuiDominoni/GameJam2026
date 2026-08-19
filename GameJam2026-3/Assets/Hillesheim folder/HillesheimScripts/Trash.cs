@@ -18,11 +18,8 @@ public class Trash : MonoBehaviour
 
     private AudioSource _trashDescartedSound;
     private bool _trashCooldown = false;
+    [SerializeField] private Transform player;
     [SerializeField] private UnityEvent OnDiscard;
-
-    private void Awake()
-    {
-    }
     private void DestroyTrash(TrashType type)
     {
         if (_trashCooldown == true)
@@ -62,6 +59,10 @@ public class Trash : MonoBehaviour
                 DestroyTrash(TrashType.metal);
             }
 
+        }
+        if(collision.GetComponent<HookPhysics>() != null)
+        {
+            transform.SetParent(player, false);
         }
     }
 }
