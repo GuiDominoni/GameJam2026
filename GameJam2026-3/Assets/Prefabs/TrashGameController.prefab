@@ -54,9 +54,25 @@ MonoBehaviour:
   paperArrowSprite: {fileID: 8998667810197996635, guid: 922dac0d7c8534744ba3931856901b2a, type: 3}
   metalArrowSprite: {fileID: -3337038689812066966, guid: 1e6519bae0def4243b1b5c5899845377, type: 3}
   glassArrowSprite: {fileID: -4244473986221331750, guid: 4441a39bec1d056409a2e3660b838e3c, type: 3}
-  _trashGameObjects: []
+  _trashGameObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _trashUi: {fileID: 0}
   _greenCheck: {fileID: 0}
   _win:
     m_PersistentCalls:
       m_Calls: []
+  victoryText: {fileID: 0}
+  finalSize: 50
+  duration: 1
+  time: 0
+  player: {fileID: 0}
+  finalZoom: 3
+  speed: 2
+  button: {fileID: 0}
+  buttonDuration: 1
+  buttonProgress: 0
+  fadeImage: {fileID: 0}
+  fadeDuration: 1
