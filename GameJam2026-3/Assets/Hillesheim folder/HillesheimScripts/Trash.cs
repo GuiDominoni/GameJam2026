@@ -37,6 +37,7 @@ public class Trash : MonoBehaviour
             if (garbage.garbageType.Equals(GarbageType.plastic) &&
                 _trash.Equals(TrashType.plastic))
             {
+                TrashGameController.Instance.HideArrow();
                 _trashUi.TrashUIUpdate(TrashType.plastic);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
@@ -45,6 +46,7 @@ public class Trash : MonoBehaviour
             else if (garbage.garbageType.Equals(GarbageType.paper) &&
                      _trash.Equals(TrashType.paper))
             {
+                TrashGameController.Instance.HideArrow();
                 _trashUi.TrashUIUpdate(TrashType.paper);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
@@ -53,6 +55,7 @@ public class Trash : MonoBehaviour
             else if (garbage.garbageType.Equals(GarbageType.glass) &&
                      _trash.Equals(TrashType.glass))
             {
+                TrashGameController.Instance.HideArrow();
                 _trashUi.TrashUIUpdate(TrashType.glass);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
@@ -61,12 +64,13 @@ public class Trash : MonoBehaviour
             else if (garbage.garbageType.Equals(GarbageType.metal) &&
                      _trash.Equals(TrashType.metal))
             {
+                TrashGameController.Instance.HideArrow();
                 _trashUi.TrashUIUpdate(TrashType.metal);
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
                 gameObject.SetActive(false);
             }
-            TrashGameController.Instance.HideArrow();
+          
         }
     }
 }

@@ -708,7 +708,7 @@ public class HookController : MonoBehaviour
         if (trash == null)
             return;
 
-        trashGameController.ShowTrashBin(trash.Type);
+        trashGameController.ShowGarbage(trash.Type);
     }
 
     // =========================================================

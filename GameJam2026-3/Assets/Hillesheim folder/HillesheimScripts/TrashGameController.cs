@@ -22,17 +22,24 @@ public class TrashGameController : MonoBehaviour
     public TrashUi TrashUi { get => _trashUi;}
 
     [Header("Garbage Bins")]
-    public Transform plasticGarbage;
-    public Transform paperGarbage;
-    public Transform metalGarbage;
-    public Transform glassGarbage;
+    [SerializeField] private Transform plasticGarbage;
+    [SerializeField] private Transform paperGarbage;
+    [SerializeField] private Transform metalGarbage;
+    [SerializeField] private Transform glassGarbage;
+
 
     [Header("Arrow")]
-    public GameObject arrow;
+    [SerializeField] private GameObject arrow;
 
     [SerializeField] private Camera mainCamera;
 
-    [Space(50)]
+    [Header("Arrow Sprites")]
+    [SerializeField] private Sprite plasticArrowSprite;
+    [SerializeField] private Sprite paperArrowSprite;
+    [SerializeField] private Sprite metalArrowSprite;
+    [SerializeField] private Sprite glassArrowSprite;
+    private SpriteRenderer arrowSpriteRenderer;
+    [Space(35)]
     [Header("Serialize Fields")]
     [SerializeField] private GameObject[] _trashGameObjects;
     [SerializeField] private TrashUi _trashUi;
@@ -51,6 +58,7 @@ public class TrashGameController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        arrowSpriteRenderer = arrow.GetComponentInChildren<SpriteRenderer>();
 
         arrow.SetActive(false);
     }
@@ -60,13 +68,14 @@ public class TrashGameController : MonoBehaviour
         if (!gameWon && TrashThrownOutValue >= _trashGameObjects.Length)
         {
             gameWon = true;
+            Debug.Log("Game Won!");
             _win.Invoke();
         }
 
         UpdateArrow();
     }
 
-    public void ShowTrashBin(TrashType type)
+    public void ShowGarbage(TrashType type)
     {
         Transform destination = null;
 
@@ -74,18 +83,22 @@ public class TrashGameController : MonoBehaviour
         {
             case TrashType.plastic:
                 destination = plasticGarbage;
+                arrowSpriteRenderer.sprite = plasticArrowSprite;
                 break;
 
             case TrashType.paper:
                 destination = paperGarbage;
+                arrowSpriteRenderer.sprite = paperArrowSprite;
                 break;
 
             case TrashType.glass:
                 destination = glassGarbage;
+                arrowSpriteRenderer.sprite = glassArrowSprite;
                 break;
 
             case TrashType.metal:
                 destination = metalGarbage;
+                arrowSpriteRenderer.sprite = metalArrowSprite;
                 break;
         }
 
