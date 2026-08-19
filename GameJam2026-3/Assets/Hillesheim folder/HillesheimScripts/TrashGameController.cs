@@ -88,9 +88,7 @@ public class TrashGameController : MonoBehaviour
             Debug.Log("Game Won!");
 
             victoryText.fontSize = 0;
-            print("antes");
             _win.Invoke();
-            print("depois");
         }
 
         if (gameWon)

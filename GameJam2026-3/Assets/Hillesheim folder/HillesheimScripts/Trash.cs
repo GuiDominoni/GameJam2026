@@ -35,7 +35,6 @@ public class Trash : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("passou");
         if (collision.GetComponent<Garbage>() != null)
         {
             _trashDescartedSound = collision.GetComponent<AudioSource>();
