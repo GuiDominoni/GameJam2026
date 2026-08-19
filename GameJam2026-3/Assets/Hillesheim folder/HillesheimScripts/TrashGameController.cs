@@ -49,20 +49,25 @@ public class TrashGameController : MonoBehaviour
     [SerializeField] private TrashUi _trashUi;
     [SerializeField] private Sprite _greenCheck;
     [SerializeField] private UnityEvent _win;
+    [Space(30)]
     [Header("Textcoming")]
     [SerializeField] private TextMeshProUGUI victoryText;
     [SerializeField] private float finalSize = 50f;
     [SerializeField] private float duration = 1f;
     [SerializeField] private float time = 0f;
+    [Space(30)]
     [Header("CamerazoomPlayer")]
     [SerializeField] private Transform player;
     [SerializeField] private float finalZoom = 3f;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float zoomSpeed = 5f;
+    [Space(30)]
     [Header("Buttoncoming")]
     [SerializeField] private RectTransform button;
     [SerializeField] private float buttonDuration = 1f;
     [SerializeField] private float buttonProgress = 0f;
+    [Space(30)]
+    [Header("Fade")]
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1f;
 
