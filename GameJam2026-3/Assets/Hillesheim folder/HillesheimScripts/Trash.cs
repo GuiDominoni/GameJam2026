@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,16 +16,18 @@ public class Trash : MonoBehaviour
     [SerializeField] private TrashUi _trashUi;
     public TrashType Type => _trash;
 
-    //private Animator _garbageAnimator;
     private AudioSource _trashDescartedSound;
+    private bool _trashCooldown = false;
     [SerializeField] private UnityEvent OnDiscard;
 
     private void Awake()
     {
-        //_garbageAnimator = TrashGameController.Instance.GarbageAnimator;
     }
     private void DestroyTrash(TrashType type)
     {
+        if (_trashCooldown == true)
+            return;
+        _trashCooldown = true;
         OnDiscard?.Invoke();
         TrashGameController.Instance.HideArrow();
         if (_trashUi != null)
