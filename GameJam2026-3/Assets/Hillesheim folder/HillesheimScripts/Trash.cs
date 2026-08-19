@@ -25,7 +25,6 @@ public class Trash : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("passou");
         if (collision.GetComponent<Garbage>() != null)
         {
             _trashDescartedSound =
@@ -69,8 +68,7 @@ public class Trash : MonoBehaviour
                 TrashGameController.Instance.AddTrash();
                 _trashDescartedSound.Play();
                 gameObject.SetActive(false);
-            }
-          
+            }  
         }
     }
 }
