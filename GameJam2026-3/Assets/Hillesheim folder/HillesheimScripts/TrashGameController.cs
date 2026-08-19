@@ -1,5 +1,9 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class TrashGameController : MonoBehaviour
@@ -45,6 +49,19 @@ public class TrashGameController : MonoBehaviour
     [SerializeField] private TrashUi _trashUi;
     [SerializeField] private Sprite _greenCheck;
     [SerializeField] private UnityEvent _win;
+    [SerializeField] private TextMeshProUGUI victoryText;
+    [SerializeField] private float finalSize = 50f;
+    [SerializeField] private float duration = 1f;
+    [SerializeField] private float time = 0f;
+    [SerializeField] private Transform player;
+    [SerializeField] private float finalZoom = 3f;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private Camera mainCam;
+    [SerializeField] private RectTransform button;
+    [SerializeField] private float buttonDuration = 1f;
+    [SerializeField] private float buttonProgress = 0f;
+    [SerializeField] private Image fadeImage;
+    [SerializeField] private float fadeDuration = 1f;
 
     private Transform currentDestination;
     private bool showingArrow;
@@ -69,7 +86,42 @@ public class TrashGameController : MonoBehaviour
         {
             gameWon = true;
             Debug.Log("Game Won!");
+            victoryText.fontSize = 0;
             _win.Invoke();
+        }
+        if (gameWon == true)
+        {
+            button.gameObject.SetActive(true);
+            victoryText.gameObject.SetActive(true);
+            mainCam.orthographicSize = Mathf.Lerp(
+                mainCam.orthographicSize,
+                finalZoom,
+                speed * Time.unscaledDeltaTime
+            );
+            transform.position = new Vector3(
+                player.position.x,
+                player.position.y,
+                transform.position.z
+            );
+
+            time += Time.deltaTime;
+            float progress = Mathf.Clamp01(time / duration);
+            victoryText.fontSize = Mathf.SmoothStep(0f, finalSize, progress);
+
+            buttonProgress += Time.unscaledDeltaTime / buttonDuration;
+            buttonProgress = Mathf.Clamp01(buttonProgress);
+            float buttonScale = Mathf.SmoothStep(0f, 1f, buttonProgress);
+            button.localScale = Vector3.one * buttonScale;
+            if (buttonProgress >= 1f)
+            {
+                enabled = false;
+            }
+
+            Time.timeScale = Mathf.Lerp(
+            Time.timeScale,
+            0f,
+            Time.unscaledDeltaTime / duration
+            );
         }
 
         UpdateArrow();
@@ -142,5 +194,29 @@ public class TrashGameController : MonoBehaviour
         currentDestination = null;
 
         arrow.SetActive(false);
+    }
+    public void next(string scene)
+    {
+        StartCoroutine(FadeAndScene(scene));
+    }
+
+    private IEnumerator FadeAndScene(string scene)
+    {
+        float fadeTime = 0f;
+        Color _color = fadeImage.color;
+
+        while (fadeTime < fadeDuration)
+        {
+            fadeTime += Time.unscaledDeltaTime;
+
+            float fadeProgress = Mathf.Clamp01(fadeTime / fadeDuration);
+            _color.a = Mathf.Lerp(0f, 1f, fadeProgress);
+
+            fadeImage.color = _color;
+
+            yield return null;
+        }
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(scene);
     }
 }
