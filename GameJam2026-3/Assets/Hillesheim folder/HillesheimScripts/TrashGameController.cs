@@ -55,7 +55,8 @@ public class TrashGameController : MonoBehaviour
     [SerializeField] private float time = 0f;
     [SerializeField] private Transform player;
     [SerializeField] private float finalZoom = 3f;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float zoomSpeed = 5f;
     [SerializeField] private RectTransform button;
     [SerializeField] private float buttonDuration = 1f;
     [SerializeField] private float buttonProgress = 0f;
@@ -85,45 +86,74 @@ public class TrashGameController : MonoBehaviour
         {
             gameWon = true;
             Debug.Log("Game Won!");
-            victoryText.fontSize = 0;
-            _win.Invoke();
-        }
-        if (gameWon == true)
-        {
-            button.gameObject.SetActive(true);
-            victoryText.gameObject.SetActive(true);
-            mainCamera.orthographicSize = Mathf.Lerp(
-                mainCamera.orthographicSize,
-                finalZoom,
-                speed * Time.unscaledDeltaTime
-            );
-            transform.position = new Vector3(
-                player.position.x,
-                player.position.y,
-                transform.position.z
-            );
 
+            victoryText.fontSize = 0;
+            print("antes");
+            _win.Invoke();
+            print("depois");
+        }
+
+        if (gameWon)
+        {
+            victoryText.gameObject.SetActive(true);
+            button.gameObject.SetActive(true);
             time += Time.deltaTime;
+
             float progress = Mathf.Clamp01(time / duration);
-            victoryText.fontSize = Mathf.SmoothStep(0f, finalSize, progress);
+
+            victoryText.fontSize = Mathf.SmoothStep(
+                0f,
+                finalSize,
+                progress
+            );
 
             buttonProgress += Time.unscaledDeltaTime / buttonDuration;
             buttonProgress = Mathf.Clamp01(buttonProgress);
-            float buttonScale = Mathf.SmoothStep(0f, 1f, buttonProgress);
+
+            float buttonScale = Mathf.SmoothStep(
+                0f,
+                1f,
+                buttonProgress
+            );
+
             button.localScale = Vector3.one * buttonScale;
+
+            Time.timeScale = Mathf.Lerp(
+                Time.timeScale,
+                0f,
+                Time.unscaledDeltaTime / duration
+            );
+
             if (buttonProgress >= 1f)
             {
                 enabled = false;
             }
-
-            Time.timeScale = Mathf.Lerp(
-            Time.timeScale,
-            0f,
-            Time.unscaledDeltaTime / duration
-            );
         }
 
         UpdateArrow();
+    }
+    private void LateUpdate()
+    {
+        if (!gameWon)
+            return;
+
+        Vector3 targetPosition = new Vector3(
+            player.position.x,
+            player.position.y,
+            mainCamera.transform.position.z
+        );
+
+        mainCamera.transform.position = Vector3.Lerp(
+            mainCamera.transform.position,
+            targetPosition,
+            1f - Mathf.Exp(-speed * Time.unscaledDeltaTime)
+        );
+
+        mainCamera.orthographicSize = Mathf.Lerp(
+            mainCamera.orthographicSize,
+            finalZoom,
+            1f - Mathf.Exp(-speed * Time.unscaledDeltaTime)
+        );
     }
 
     public void ShowGarbage(TrashType type)

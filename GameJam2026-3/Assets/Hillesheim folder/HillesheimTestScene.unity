@@ -4277,10 +4277,9 @@ MonoBehaviour:
   finalSize: 100
   duration: 1
   time: 0
-  player: {fileID: 723832551}
+  player: {fileID: 337499054}
   finalZoom: 3
   speed: 2
-  mainCam: {fileID: 1167384966}
   button: {fileID: 105785541}
   buttonDuration: 1
   buttonProgress: 0
