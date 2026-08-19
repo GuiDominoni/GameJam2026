@@ -56,7 +56,6 @@ public class TrashGameController : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float finalZoom = 3f;
     [SerializeField] private float speed = 2f;
-    [SerializeField] private Camera mainCam;
     [SerializeField] private RectTransform button;
     [SerializeField] private float buttonDuration = 1f;
     [SerializeField] private float buttonProgress = 0f;
@@ -93,8 +92,8 @@ public class TrashGameController : MonoBehaviour
         {
             button.gameObject.SetActive(true);
             victoryText.gameObject.SetActive(true);
-            mainCam.orthographicSize = Mathf.Lerp(
-                mainCam.orthographicSize,
+            mainCamera.orthographicSize = Mathf.Lerp(
+                mainCamera.orthographicSize,
                 finalZoom,
                 speed * Time.unscaledDeltaTime
             );
