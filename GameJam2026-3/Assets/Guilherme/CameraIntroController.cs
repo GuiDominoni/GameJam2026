@@ -37,8 +37,6 @@ public class CameraIntroController : MonoBehaviour
             return;
         }
 
-        // Mata qualquer tween anterior na câmera antes de começar um novo,
-        // pra evitar comportamento estranho se o botão Jogar for clicado 2x.
         transform.DOKill();
         isFollowing = false;
 
@@ -46,9 +44,15 @@ public class CameraIntroController : MonoBehaviour
 
         transform.DOMove(targetPos, transitionDuration)
             .SetEase(transitionEase)
-            .OnComplete(() => isFollowing = true);
-    }
+            .OnComplete(() =>
+            {
+                // Garante que a câmera fique exatamente na posição desejada
+                transform.position = player.position + followOffset;
 
+                // Só depois começa o follow
+                isFollowing = true;
+            });
+    }
     private void LateUpdate()
     {
         if (!isFollowing || player == null) return;
