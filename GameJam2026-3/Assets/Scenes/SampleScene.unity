@@ -2273,13 +2273,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashUi
   _checkPlasticSprites:
-  - {fileID: 1018598545}
+  - {fileID: 1845126218}
   _checkPaperSprites:
-  - {fileID: 225076465}
+  - {fileID: 1496142978}
   _checkGlassSprites:
-  - {fileID: 579562529}
+  - {fileID: 900829785}
   _checkMetalSprites:
-  - {fileID: 1941384564}
+  - {fileID: 1920821346}
 --- !u!1 &305117447
 GameObject:
   m_ObjectHideFlags: 0
