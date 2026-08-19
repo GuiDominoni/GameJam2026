@@ -60,6 +60,7 @@ public class Trash : MonoBehaviour
                 _trashDescartedSound.Play();
                 Destroy(gameObject);
             }
+            TrashGameController.Instance.HideArrow();
         }
     }
 }
