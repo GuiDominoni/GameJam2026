@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum TrashType
 {
@@ -16,59 +17,49 @@ public class Trash : MonoBehaviour
 
     //private Animator _garbageAnimator;
     private AudioSource _trashDescartedSound;
-    private bool _pulled = false;
+    [SerializeField] private UnityEvent OnDiscard;
 
     private void Awake()
     {
         //_garbageAnimator = TrashGameController.Instance.GarbageAnimator;
     }
-
+    private void DestroyTrash(TrashType type)
+    {
+        OnDiscard?.Invoke();
+        TrashGameController.Instance.HideArrow();
+        if (_trashUi != null)
+            _trashUi.TrashUIUpdate(type);
+        TrashGameController.Instance.AddTrash();
+        _trashDescartedSound.Play();
+        gameObject.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("passou");
         if (collision.GetComponent<Garbage>() != null)
         {
-            _trashDescartedSound =
-                collision.GetComponent<AudioSource>();
+            _trashDescartedSound = collision.GetComponent<AudioSource>();
 
-            Garbage garbage =
-                collision.GetComponent<Garbage>();
+            Garbage garbage = collision.GetComponent<Garbage>();
 
-            if (garbage.garbageType.Equals(GarbageType.plastic) &&
-                _trash.Equals(TrashType.plastic))
+            if (garbage.garbageType.Equals(GarbageType.plastic) && _trash.Equals(TrashType.plastic))
             {
-                TrashGameController.Instance.HideArrow();
-                _trashUi.TrashUIUpdate(TrashType.plastic);
-                TrashGameController.Instance.AddTrash();
-                _trashDescartedSound.Play();
-                gameObject.SetActive(false);
+                DestroyTrash(TrashType.plastic);
             }
-            else if (garbage.garbageType.Equals(GarbageType.paper) &&
-                     _trash.Equals(TrashType.paper))
+
+            else if (garbage.garbageType.Equals(GarbageType.paper) && _trash.Equals(TrashType.paper))
             {
-                TrashGameController.Instance.HideArrow();
-                _trashUi.TrashUIUpdate(TrashType.paper);
-                TrashGameController.Instance.AddTrash();
-                _trashDescartedSound.Play();
-                gameObject.SetActive(false);
+                DestroyTrash(TrashType.paper);
             }
-            else if (garbage.garbageType.Equals(GarbageType.glass) &&
-                     _trash.Equals(TrashType.glass))
+            else if (garbage.garbageType.Equals(GarbageType.glass) && _trash.Equals(TrashType.glass))
             {
-                TrashGameController.Instance.HideArrow();
-                _trashUi.TrashUIUpdate(TrashType.glass);
-                TrashGameController.Instance.AddTrash();
-                _trashDescartedSound.Play();
-                gameObject.SetActive(false);
+                DestroyTrash(TrashType.glass);
             }
-            else if (garbage.garbageType.Equals(GarbageType.metal) &&
-                     _trash.Equals(TrashType.metal))
+            else if (garbage.garbageType.Equals(GarbageType.metal) && _trash.Equals(TrashType.metal))
             {
-                TrashGameController.Instance.HideArrow();
-                _trashUi.TrashUIUpdate(TrashType.metal);
-                TrashGameController.Instance.AddTrash();
-                _trashDescartedSound.Play();
-                gameObject.SetActive(false);
-            }  
+                DestroyTrash(TrashType.metal);
+            }
+
         }
     }
 }
