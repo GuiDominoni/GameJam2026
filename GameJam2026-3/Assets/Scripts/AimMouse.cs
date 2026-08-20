@@ -10,13 +10,13 @@ public class AimMouse : MonoBehaviour
             Screen.height / 2f
         );
 
-        // Posição do mouse na tela
+        // Posiï¿½ï¿½o do mouse na tela
         Vector2 mousePosition = Input.mousePosition;
 
-        // Direção do centro da tela até o mouse
+        // Direï¿½ï¿½o do centro da tela atï¿½ o mouse
         Vector2 direction = mousePosition - screenCenter;
 
-        // Calcula o ângulo
+        // Calcula o ï¿½ngulo
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Rotaciona

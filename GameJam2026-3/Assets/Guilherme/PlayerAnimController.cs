@@ -15,4 +15,9 @@ public class PlayerAnimController : MonoBehaviour
         animPlayer.SetBool("Change", false);
     }
 
+    public void Wake()
+    {
+        animPlayer.SetBool("Wake", true);
+    }
+
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.Events;
 /// <summary>
 /// Orquestra a sequência inteira: clique em Jogar -> câmera segue o player ->
 /// animação de acordar/andar -> textos da caminhada -> diálogo -> zoom out final.
@@ -15,9 +15,18 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private WalkTextSequencer walkTextSequencer;
     [SerializeField] private DialogueController dialogueController;
     [SerializeField] private GameObject menuCanvas;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerTuto;
+    [SerializeField] private Canvas canvas;
 
     [Header("Scripts desativados durante o diálogo")]
     [SerializeField] private List<MonoBehaviour> scriptsToDisable;
+
+
+
+    public UnityEvent changeAnim;
+
+    
 
     private bool hasStartedWalking;
     private bool hasReachedDialoguePoint;
@@ -26,6 +35,8 @@ public class GameFlowManager : MonoBehaviour
     {
         Instance = this;
         SetDialogueScriptsEnabled(false);
+        //player.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
 
     public void OnPlayButtonPressed()
@@ -35,7 +46,7 @@ public class GameFlowManager : MonoBehaviour
 
         cameraController.StartFollowingPlayer();
         playerController.BeginIntroSequence();
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     public void OnPlayerStartedWalking()
@@ -57,6 +68,9 @@ public class GameFlowManager : MonoBehaviour
         SetDialogueScriptsEnabled(false);
 
         dialogueController.BeginDialogue();
+       
+
+        
     }
 
     public void OnDialogueFinished()
@@ -65,7 +79,13 @@ public class GameFlowManager : MonoBehaviour
         SetDialogueScriptsEnabled(true);
 
         cameraController.ZoomOut();
-        Cursor.visible = true;
+       
+        //Cursor.visible = true;
+        playerTuto.SetActive(false);
+        player.SetActive(true);
+        canvas.gameObject.SetActive(true);
+        changeAnim.Invoke();
+        
     }
 
     private void SetDialogueScriptsEnabled(bool enabled)
