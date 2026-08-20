@@ -144,7 +144,7 @@ public class Timer : MonoBehaviour
 
             yield return null;
         }
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
