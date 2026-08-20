@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Guilherme/Tutorial.unity
+    guid: 5452ac2f66d949a4796f534ff806c7f5
+  - enabled: 1
+    path: Assets/Bernardo A/B.unity
+    guid: e581e343ea6d5fd44be3c29372279209
+  - enabled: 1
+    path: Assets/Bernardo A/Cenario primaira fase.unity
+    guid: 80bfa9906a24da0478828b3437479ede
+  - enabled: 1
+    path: Assets/Bernardo A/Cenario Fechado.unity
+    guid: e2d735d296b031b47a74938b89c941f2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
