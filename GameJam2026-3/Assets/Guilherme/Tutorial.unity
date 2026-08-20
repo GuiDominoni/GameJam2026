@@ -409,6 +409,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
+      propertyPath: _trashUi
+      value: 
+      objectReference: {fileID: 1667579741}
+    - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 1983260163}
     - target: {fileID: 7288369778449865174, guid: a20483dfef78b324582c4a23ab673978, type: 3}
       propertyPath: m_Name
       value: paper
@@ -2897,6 +2905,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b2a4fe2aec015f41830816b3d64917e, type: 2}
+    - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: _trashUi
+      value: 
+      objectReference: {fileID: 1667579741}
+    - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 1983260163}
     - target: {fileID: 5965624377333870652, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
       propertyPath: m_Name
       value: glass
@@ -4434,6 +4450,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b2a4fe2aec015f41830816b3d64917e, type: 2}
+    - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
+      propertyPath: _trashUi
+      value: 
+      objectReference: {fileID: 1667579741}
+    - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 1983260163}
     - target: {fileID: 5914261295716823563, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.3
@@ -6357,6 +6381,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098507720}
   m_CullTransparentMesh: 1
+--- !u!114 &1140533450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+  m_PrefabInstance: {fileID: 1603328652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d6e3f3a7a4fb342874f6f40c71a7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashGameController
 --- !u!1 &1149706272
 GameObject:
   m_ObjectHideFlags: 0
@@ -6520,6 +6555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5249649222328722072, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+      propertyPath: trashGameController
+      value: 
+      objectReference: {fileID: 1140533450}
     - target: {fileID: 8124910015478913048, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.99
@@ -47014,6 +47053,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b2a4fe2aec015f41830816b3d64917e, type: 2}
+    - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
+      propertyPath: _trashUi
+      value: 
+      objectReference: {fileID: 1667579741}
+    - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 1983260163}
     - target: {fileID: 7845350448142391210, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
       propertyPath: m_Name
       value: plastic
@@ -48075,6 +48122,22 @@ PrefabInstance:
       propertyPath: victoryText
       value: 
       objectReference: {fileID: 1667579744}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: glassGarbage
+      value: 
+      objectReference: {fileID: 26020445}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: metalGarbage
+      value: 
+      objectReference: {fileID: 187430970}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: paperGarbage
+      value: 
+      objectReference: {fileID: 87381407}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: plasticGarbage
+      value: 
+      objectReference: {fileID: 130981644}
     - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
       propertyPath: '_trashGameObjects.Array.data[0]'
       value: 
@@ -55847,6 +55910,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!4 &1983260163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1046535077237708092, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+  m_PrefabInstance: {fileID: 1164465944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2007337803
 PrefabInstance:
   m_ObjectHideFlags: 0
