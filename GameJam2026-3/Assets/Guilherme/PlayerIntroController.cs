@@ -64,4 +64,9 @@ public class PlayerIntroController : MonoBehaviour
     {
         GameFlowManager.Instance.OnPlayerReachedDialoguePoint();
     }
+
+    public void DisableThisTimeline()
+    {
+        introTimeline.enabled = false;
+    }
 }

@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Plataforma
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Plataforma
   - Water
   - UI
   - Player

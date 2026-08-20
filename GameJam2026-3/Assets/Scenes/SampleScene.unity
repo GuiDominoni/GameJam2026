@@ -553,6 +553,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &64266419 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2800555387685570941, guid: 7ed43780d82dd304497acafceba24925, type: 3}
+  m_PrefabInstance: {fileID: 4486291135704269509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &83840921
 GameObject:
   m_ObjectHideFlags: 0
@@ -10544,7 +10549,7 @@ MonoBehaviour:
   buttonDuration: 1
   buttonProgress: 0
   timerText: {fileID: 966365417}
-  startTime: 2
+  startTime: 200
   fadeImage: {fileID: 2077107501}
   fadeDuration: 1
   mainCamera: {fileID: 1428890264}
@@ -10899,6 +10904,11 @@ Transform:
   - {fileID: 1005238783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1014011343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1668605323771648331, guid: 8db2276e2daf552489077fa26b2e588d, type: 3}
+  m_PrefabInstance: {fileID: 450517248363129487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018598543
 GameObject:
   m_ObjectHideFlags: 0
@@ -11742,6 +11752,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1410388732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6165799531963342997, guid: 8551937cd0e48bd4fa12494c626871c1, type: 3}
+  m_PrefabInstance: {fileID: 7767502234222800641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1413474808
 GameObject:
   m_ObjectHideFlags: 0
@@ -50625,6 +50640,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2298679997274744452, guid: 8db2276e2daf552489077fa26b2e588d, type: 3}
   m_PrefabInstance: {fileID: 450517248363129487}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2121112688 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2263526953649837631, guid: b95615ffdf268914a98bb3ab5e3a3d88, type: 3}
+  m_PrefabInstance: {fileID: 4695670264362677124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &450517248363129487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50691,6 +50711,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
+    - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
       propertyPath: _trashUi
       value: 
       objectReference: {fileID: 260857551}
@@ -50746,6 +50770,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Size.x
+      value: 21.47213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Size.y
+      value: 10.509027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.1278076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861651496651165374, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.02227068
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50763,6 +50803,14 @@ PrefabInstance:
       propertyPath: trashGameController
       value: 
       objectReference: {fileID: 604926701}
+    - target: {fileID: 7778060118217740928, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+      propertyPath: m_Radius
+      value: 1.0481386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778060118217740928, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.0055313
+      objectReference: {fileID: 0}
     - target: {fileID: 8124910015478913048, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.5
@@ -50860,6 +50908,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
     - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
       propertyPath: _trashUi
       value: 
@@ -51004,6 +51056,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
+    - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
       propertyPath: _trashUi
       value: 
       objectReference: {fileID: 260857551}
@@ -51112,6 +51168,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1743236623}
     - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
       propertyPath: _trashUi
       value: 
@@ -51274,6 +51334,22 @@ PrefabInstance:
       propertyPath: victoryText
       value: 
       objectReference: {fileID: 83840923}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: glassGarbage
+      value: 
+      objectReference: {fileID: 64266419}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: metalGarbage
+      value: 
+      objectReference: {fileID: 1410388732}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: paperGarbage
+      value: 
+      objectReference: {fileID: 1014011343}
+    - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
+      propertyPath: plasticGarbage
+      value: 
+      objectReference: {fileID: 2121112688}
     - target: {fileID: 8485259518030922259, guid: 3e69370f1d7c9a4469aa7779365eae63, type: 3}
       propertyPath: '_trashGameObjects.Array.data[0]'
       value: 

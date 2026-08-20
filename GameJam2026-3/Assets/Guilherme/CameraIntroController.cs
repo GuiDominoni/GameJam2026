@@ -10,9 +10,11 @@ using DG.Tweening;
 public class CameraIntroController : MonoBehaviour
 {
     [Header("Alvo")]
-    [SerializeField] private Transform player;
+    private Transform playerPos;
+    [SerializeField] private GameObject playerTuto;
+    [SerializeField] private GameObject player;
     [SerializeField] private Vector3 followOffset = new Vector3(0f, 2f, -10f);
-
+ 
     [Header("Transição inicial (menu -> player)")]
     [SerializeField] private float transitionDuration = 1.2f;
     [SerializeField] private Ease transitionEase = Ease.InOutSine;
@@ -27,11 +29,12 @@ public class CameraIntroController : MonoBehaviour
     private void Awake()
     {
         cam = GetComponent<Camera>();
+        playerPos=playerTuto.transform;
     }
 
     public void StartFollowingPlayer()
     {
-        if (player == null)
+        if (playerPos == null)
         {
             Debug.LogWarning("[CameraIntroController] 'player' não foi atribuído no Inspector.");
             return;
@@ -40,14 +43,14 @@ public class CameraIntroController : MonoBehaviour
         transform.DOKill();
         isFollowing = false;
 
-        Vector3 targetPos = player.position + followOffset;
+        Vector3 targetPos = playerPos.position + followOffset;
 
         transform.DOMove(targetPos, transitionDuration)
             .SetEase(transitionEase)
             .OnComplete(() =>
             {
                 // Garante que a câmera fique exatamente na posição desejada
-                transform.position = player.position + followOffset;
+                transform.position = playerPos.position + followOffset;
 
                 // Só depois começa o follow
                 isFollowing = true;
@@ -55,17 +58,17 @@ public class CameraIntroController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (!isFollowing || player == null) return;
+        if (!isFollowing || playerPos == null) return;
 
         // Grudado direto no player. Se quiser um follow mais suave, troque por:
         // transform.position = Vector3.Lerp(transform.position, player.position + followOffset, Time.deltaTime * followSmooth);
-        transform.position = player.position + followOffset;
+        transform.position = playerPos.position + followOffset;
     }
 
     public void ZoomOut()
     {
         cam.DOKill();
-
+        playerPos = player.transform;
         if (cam.orthographic)
         {
             cam.DOOrthoSize(cam.orthographicSize + zoomOutAmount, zoomOutDuration)
@@ -76,5 +79,7 @@ public class CameraIntroController : MonoBehaviour
             cam.DOFieldOfView(cam.fieldOfView + zoomOutAmount, zoomOutDuration)
                 .SetEase(Ease.OutSine);
         }
+
+
     }
 }
