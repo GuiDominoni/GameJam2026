@@ -139,12 +139,6 @@ public class TrashGameController : MonoBehaviour
 
             button.localScale = Vector3.one * buttonScale;
 
-            Time.timeScale = Mathf.Lerp(
-                Time.timeScale,
-                0f,
-                Time.unscaledDeltaTime / duration
-            );
-
             if (buttonProgress >= 1f)
             {
                 enabled = false;
