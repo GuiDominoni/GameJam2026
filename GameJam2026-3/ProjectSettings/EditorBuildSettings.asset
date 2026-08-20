@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Guilherme/Tutorial.unity
     guid: 5452ac2f66d949a4796f534ff806c7f5
   - enabled: 1
-    path: Assets/Bernardo A/B.unity
-    guid: e581e343ea6d5fd44be3c29372279209
-  - enabled: 1
     path: Assets/Bernardo A/Cenario primaira fase.unity
     guid: 80bfa9906a24da0478828b3437479ede
   - enabled: 1

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8957670974652433838}
   - component: {fileID: 1014096757351780496}
   - component: {fileID: 2298679997274744452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lixeira_papel_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 750337194703192891}
   - component: {fileID: 8422388397230409746}
   - component: {fileID: 7366186482627522995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +4960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3851184158586228307}
   - component: {fileID: 6627573451486435924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lixeira_papel_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5052,7 +5052,9 @@ GameObject:
   - component: {fileID: 8147985652465862865}
   - component: {fileID: 2690664035741342479}
   - component: {fileID: 2747162843118175646}
-  m_Layer: 0
+  - component: {fileID: 204332243892345746}
+  - component: {fileID: 556243661905933457}
+  m_Layer: 7
   m_Name: LixeiraAzul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5233,3 +5235,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Garbage
   garbageType: 1
+--- !u!114 &204332243892345746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296854565286233826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7432e67e4d3a7c84bb2846f23c8631ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Grabbable
+--- !u!114 &556243661905933457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296854565286233826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb83ef09f6f42044a5eaa1408b010b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HookAnchorPoint
+  localOffset: {x: 0, y: 0}

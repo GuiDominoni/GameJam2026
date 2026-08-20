@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1692258217643979124}
   - component: {fileID: 7929284171401179813}
   - component: {fileID: 2317683253042051523}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 7090728053432045087}
   - component: {fileID: 143937958388149835}
   - component: {fileID: 5303444518064133719}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lixeira_metal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4962,7 +4962,9 @@ GameObject:
   - component: {fileID: 3392380192026630707}
   - component: {fileID: 9155771254595086158}
   - component: {fileID: 6087487384509153595}
-  m_Layer: 0
+  - component: {fileID: 1440643485615233717}
+  - component: {fileID: 4778875032950294258}
+  m_Layer: 7
   m_Name: LixeiraAmarela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5143,6 +5145,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Garbage
   garbageType: 3
+--- !u!114 &1440643485615233717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275527286364672748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7432e67e4d3a7c84bb2846f23c8631ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Grabbable
+--- !u!114 &4778875032950294258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275527286364672748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb83ef09f6f42044a5eaa1408b010b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HookAnchorPoint
+  localOffset: {x: 0, y: 0}
 --- !u!1 &8787366225676472929
 GameObject:
   m_ObjectHideFlags: 0
@@ -5153,7 +5180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6056672734087418528}
   - component: {fileID: 8824757202611529182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lixeira_metal_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
