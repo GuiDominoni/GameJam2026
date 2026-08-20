@@ -76,6 +76,20 @@ public class TrashGameController : MonoBehaviour
     private bool showingArrow;
     private bool gameWon = false;
 
+    private Trash currentTrash;
+
+    public bool IsHoldingTrash => currentTrash != null;
+
+    public void SetTrash(Trash trash)
+    {
+        currentTrash = trash;
+    }
+
+    public void ClearTrash()
+    {
+        currentTrash = null;
+    }
+
     public void AddTrash()
     {
         TrashThrownOutValue++;
