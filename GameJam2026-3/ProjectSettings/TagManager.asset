@@ -48,11 +48,11 @@ TagManager:
   - name: Trash
     uniqueID: 2921605249
     locked: 0
-  - name: UI
-    uniqueID: 1124326233
-    locked: 0
   - name: Grabbable
     uniqueID: 596309267
+    locked: 0
+  - name: UI
+    uniqueID: 1124326233
     locked: 0
   m_RenderingLayers:
   - Default

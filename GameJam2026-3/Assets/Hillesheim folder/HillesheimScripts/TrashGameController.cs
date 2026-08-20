@@ -138,11 +138,6 @@ public class TrashGameController : MonoBehaviour
             );
 
             button.localScale = Vector3.one * buttonScale;
-
-            if (buttonProgress >= 1f)
-            {
-                enabled = false;
-            }
         }
 
         UpdateArrow();
