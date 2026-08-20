@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +17,8 @@ public class Trash : MonoBehaviour
 
     private AudioSource _trashDescartedSound;
     private bool _trashCooldown = false;
-    [SerializeField] private Transform player;
+    private bool _isTrashGrabbed;
+    [SerializeField] private Transform trashPosition;
     [SerializeField] private UnityEvent OnDiscard;
     private void DestroyTrash(TrashType type)
     {
@@ -26,6 +26,7 @@ public class Trash : MonoBehaviour
             return;
         _trashCooldown = true;
         OnDiscard?.Invoke();
+        _isTrashGrabbed = false;
         TrashGameController.Instance.HideArrow();
         if (_trashUi != null)
             _trashUi.TrashUIUpdate(type);
@@ -60,9 +61,19 @@ public class Trash : MonoBehaviour
             }
 
         }
-        if(collision.GetComponent<HookPhysics>() != null)
+        Debug.Log(collision.GetComponent<PlayerAnimController>());
+        if (collision.GetComponent<PlayerAnimController>() != null)
         {
-            transform.SetParent(player, false);
+            if (_isTrashGrabbed == true)
+                return;
+            _isTrashGrabbed = true;
+            transform.SetParent(trashPosition, false);
+            transform.localPosition = Vector3.zero;
+            GetComponent<Collider2D>().enabled = false;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.bodyType = RigidbodyType2D.Kinematic;
         }
     }
 }

@@ -24,6 +24,7 @@ public class TrashGameController : MonoBehaviour
     }
     public Sprite GreenCheck { get => _greenCheck;}
     public TrashUi TrashUi { get => _trashUi;}
+    public Transform Player { get => player;}
 
     [Header("Garbage Bins")]
     [SerializeField] private Transform plasticGarbage;

@@ -1110,7 +1110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HookVisual
   hookController: {fileID: 162630212}
-  characterAnchor: {fileID: 162630214}
+  originOffset: {x: 0, y: 0}
+  segmentCount: 10
+  springStiffness: 150
+  damping: 10
+  maxSag: 0.6
+  kickSensitivity: 0.4
 --- !u!120 &162630211
 LineRenderer:
   serializedVersion: 2
@@ -9724,6 +9729,11 @@ Transform:
   - {fileID: 460383641}
   m_Father: {fileID: 900222927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &760825090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8896404480649871363, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+  m_PrefabInstance: {fileID: 4063651803254943531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &760947983
 GameObject:
   m_ObjectHideFlags: 0
@@ -13090,6 +13100,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8124910015478913048, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
   m_PrefabInstance: {fileID: 4063651803254943531}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1743236637
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760825090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.047527313, y: 1.0180047}
+  m_Radius: 1.1978157
 --- !u!1 &1774124078
 GameObject:
   m_ObjectHideFlags: 0
@@ -50719,6 +50765,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 260857551}
     - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 4063651803254943532}
+    - target: {fileID: 2213206718328671015, guid: ff4f7d6014ed33446a3891f8da910d03, type: 3}
       propertyPath: OnDiscard.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 878236392}
@@ -50858,8 +50908,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8896404480649871363, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1743236637}
   m_SourcePrefab: {fileID: 100100000, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+--- !u!4 &4063651803254943532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1046535077237708092, guid: 608f8e8be7af6944f891270b2890121d, type: 3}
+  m_PrefabInstance: {fileID: 4063651803254943531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4175197874219899756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50916,6 +50974,10 @@ PrefabInstance:
       propertyPath: _trashUi
       value: 
       objectReference: {fileID: 260857551}
+    - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 4063651803254943532}
     - target: {fileID: 5868843187605817537, guid: 043bf06388e585a43b698f4e013a6b74, type: 3}
       propertyPath: OnDiscard.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -51064,6 +51126,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 260857551}
     - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 4063651803254943532}
+    - target: {fileID: 3886645138676745342, guid: a4e2fcb6b9b88904c9919cb74792e314, type: 3}
       propertyPath: OnDiscard.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1549618392}
@@ -51176,6 +51242,10 @@ PrefabInstance:
       propertyPath: _trashUi
       value: 
       objectReference: {fileID: 260857551}
+    - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
+      propertyPath: trashPosition
+      value: 
+      objectReference: {fileID: 4063651803254943532}
     - target: {fileID: 5836239759457245220, guid: a20483dfef78b324582c4a23ab673978, type: 3}
       propertyPath: OnDiscard.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
