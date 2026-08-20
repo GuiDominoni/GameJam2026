@@ -78,6 +78,8 @@ public class TrashGameController : MonoBehaviour
 
     private Trash currentTrash;
 
+    public UnityEvent nextScene;
+
     public bool IsHoldingTrash => currentTrash != null;
 
     public void SetTrash(Trash trash)
@@ -117,7 +119,7 @@ public class TrashGameController : MonoBehaviour
         if (gameWon)
         {
             victoryText.gameObject.SetActive(true);
-            button.gameObject.SetActive(true);
+            //button.gameObject.SetActive(true);
             time += Time.deltaTime;
 
             float progress = Mathf.Clamp01(time / duration);
@@ -128,16 +130,7 @@ public class TrashGameController : MonoBehaviour
                 progress
             );
 
-            buttonProgress += Time.unscaledDeltaTime / buttonDuration;
-            buttonProgress = Mathf.Clamp01(buttonProgress);
-
-            float buttonScale = Mathf.SmoothStep(
-                0f,
-                1f,
-                buttonProgress
-            );
-
-            button.localScale = Vector3.one * buttonScale;
+            nextScene.Invoke();
         }
 
         UpdateArrow();
