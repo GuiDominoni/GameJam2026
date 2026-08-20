@@ -15,10 +15,15 @@ public class Trash : MonoBehaviour
     [SerializeField] private TrashUi _trashUi;
     public TrashType Type => _trash;
 
+    private TrashType _objectType;
     private AudioSource _trashDescartedSound;
     private bool _trashCooldown = false;
     [SerializeField] private Transform trashPosition;
     [SerializeField] private UnityEvent OnDiscard;
+    private void Awake()
+    {
+        _objectType = _trash;
+    }
     private void DestroyTrash(TrashType type)
     {
         if (_trashCooldown == true)
@@ -72,6 +77,7 @@ public class Trash : MonoBehaviour
                 return;
 
             TrashGameController.Instance.SetTrash(this);
+            TrashGameController.Instance.ShowGarbage(_objectType);
             transform.SetParent(trashPosition, false);
             transform.localPosition = Vector3.zero;
             GetComponent<Collider2D>().enabled = false;
