@@ -145,7 +145,7 @@ public class HookController : MonoBehaviour
     // =========================================================
     // INICIALIZAÇÃO
     // =========================================================
-
+ 
     private void Awake()
     {
         if (characterAnchor == null)
@@ -408,6 +408,8 @@ public class HookController : MonoBehaviour
         {
             TipPosition =
                 currentAnchorPoint.WorldPosition;
+  
+
         }
         else
         {
@@ -520,7 +522,11 @@ public class HookController : MonoBehaviour
 
             currentTarget =
                 hitCollider.gameObject;
-
+            if (currentTarget.gameObject.TryGetComponent(out GrabParticle _particleSystem))
+            {
+                _particleSystem.InvokeParticle();
+            }
+                
             hitCollider.TryGetComponent(
                 out Rigidbody2D targetBody
             );
